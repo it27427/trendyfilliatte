@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poetsen+One&display=swap');
+
+:root {
+  --headingFont: "Poetsen One", sans-serif;
+  --textFont: "Plus Jakarta Sans", sans-serif;
+  --italicFont: "Dancing Script", cursive;
+  --basecolor: #fe5586;
+  --baselight: #ff958c;
+  --primary: #fd5086;
+}
+
+::selection {
+  background: var(--basecolor);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /* color: var(--); */
+  font-family: var(--headingFont);
+}
+
+body {
+  font-family: var(--textFont);
+}
+
+.text-italic {
+  font-family: var(--italicFont);
+}
