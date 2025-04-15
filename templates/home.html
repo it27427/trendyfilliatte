@@ -1,16 +1,46 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blog Application">
+    <meta name="author" content="Istiak Hossain Tushar">
+    <meta name="generator" content="Hugo 0.145.0">
+
     <title>Trendyfilliatte - Affiliate Blog App</title>
+
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}" />
     <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
+
   <body>
+    <header class="sticky top-0 w-100 bg-black d-flex align-items-center">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="/">
+            <img src="{% static 'images/logo/logo.png' %}" alt="BRAND-LOGO" width="64">
+          </a>
+
+          <ul class="nav gap-2">
+            <li class="nav-item">
+              <a href="/login" class="btn btn-primary fw-bold text-uppercase btn-auth" style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .875rem; --bs-btn-font-size: .75rem;">
+                Login
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/register" class="btn btn-outline-light fw-bold text-uppercase btn-auth" style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .875rem; --bs-btn-font-size: .75rem;">
+                Register
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
     <h1 clss="text-center fw-bold text-primary mb-0">
       Welcome to the Trendyfilliatte application!
     </h1>

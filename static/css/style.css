@@ -25,3 +25,11 @@ body {
 .text-italic {
   font-family: var(--italicFont);
 }
+
+header {
+  height: 5rem;
+}
+
+.btn-auth {
+  min-width: 5rem;
+}
