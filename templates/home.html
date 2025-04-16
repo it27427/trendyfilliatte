@@ -47,9 +47,13 @@
   <nav>
     <div class="container">
       <ul class="nav">
-        <li class="nav-item">
-          <a href="#" class="nav-link">Active</a>
-        </li>
+        {% for cat in categories %}
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark fw-medium">
+              {{ cat.category_name }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </nav>
