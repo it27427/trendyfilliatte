@@ -1,9 +1,8 @@
+# admin.py
 from django.contrib import admin
-from . models import Category
-
-# Register your models here.
+from .models import Category
 
 class CategoryAdmin(admin.ModelAdmin):
   list_display = ('id', 'category_name', 'created_at', 'updated_at')
 
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
