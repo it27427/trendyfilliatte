@@ -10,10 +10,13 @@ class Category(models.Model):
   class Meta:
     verbose_name_plural = 'Categories'
     
+  def __str__(self):
+    return self.category_name
+    
 
 STATUS_CHOICE = (
-    ('draft', 'Draft'),
-    ('public', 'Published'),
+  ('draft', 'Draft'),
+  ('published', 'Published'),
 )    
 
 class Blogs(models.Model):
@@ -24,7 +27,7 @@ class Blogs(models.Model):
   blog_image = models.ImageField(upload_to='uploads/%y/%m/%d')
   short_description = models.TextField(max_length=2000)
   blogs_body = models.TextField(max_length=5000)
-  status = models.IntegerField(choices = STATUS_CHOICE, default='draft')
+  status = models.CharField(max_length=100, choices = STATUS_CHOICE, default='draft')
   is_featured = models.BooleanField(default=False)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
