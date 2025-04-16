@@ -7,6 +7,8 @@
   --basecolor: #fe5586;
   --baselight: #ff958c;
   --primary: #fd5086;
+  --textdark: #333333;
+  --transitions: all 500ms ease-in-out;
 }
 
 ::selection {
@@ -16,6 +18,17 @@
 h1, h2, h3, h4, h5, h6 {
   /* color: var(--); */
   font-family: var(--headingFont);
+}
+
+a {
+  color: var(--textdark);
+  display: inline-block;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
 }
 
 body {
@@ -32,4 +45,39 @@ header {
 
 .btn-auth {
   min-width: 5rem;
+}
+
+.ctglink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: (--transitions);
+}
+
+.ctglink:hover {
+  color: var(--basecolor);
+}
+
+.categorynav {
+  height: 3rem;
+}
+
+/* MIN-WIDTH: 768px => 48rem */
+@media screen and (min-width: 48rem) {}
+
+/* MIN-WIDTH: 992px => 62rem */
+@media screen and (min-width: 62rem) {}
+
+/* MIN-WIDTH: 1200px => 75rem */
+@media screen and (min-width: 75rem) {
+  .ctglink {
+    font-size: 1rem;
+  }
+}
+
+/* MIN-WIDTH: 1400px => 87.5rem */
+@media screen and (min-width: 87.5rem) {
+  .ctglink {
+    font-size: 1.125rem;
+  }
 }

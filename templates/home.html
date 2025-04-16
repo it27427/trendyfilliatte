@@ -44,19 +44,21 @@
     </div>
   </header>
 
-  <nav>
-    <div class="container">
-      <ul class="nav">
-        {% for cat in categories %}
-          <li class="nav-item">
-            <a href="#" class="nav-link text-dark fw-medium">
-              {{ cat.category_name }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </nav>
+  <div class="d-none d-md-block">
+    <nav class="categorynav d-flex align-items-center">
+      <div class="container">
+        <ul class="d-flex align-items-center justify-content-center gap-3">
+          {% for cat in categories %}
+            <li>
+              <a href="#" class="ctglink">
+                {{ cat.category_name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
 
   <h1 clss="text-center fw-bold text-primary mb-0">
     Welcome to the Trendyfilliatte application!
