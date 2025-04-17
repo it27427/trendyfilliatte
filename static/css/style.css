@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poetsen+One&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
   --headingFont: "Poetsen One", sans-serif;
@@ -8,7 +9,10 @@
   --baselight: #ff958c;
   --primary: #fd5086;
   --textdark: #333333;
-  --transitions: all 500ms ease-in-out;
+  --error: #12203C;
+  --white: #ffffff;
+  --black: #000000;
+  --transitions: all 400ms ease-in-out;
 }
 
 ::selection {
@@ -24,7 +28,7 @@ a {
   color: var(--textdark);
   display: inline-block;
   text-decoration: none;
-  transition: (--transitions);
+  transition: var(--transitions);
 }
 
 ul, ol, figure {
@@ -36,6 +40,8 @@ body {
   font-family: var(--textFont);
 }
 
+/* UTILITIES */
+
 .text-italic {
   font-family: var(--italicFont);
 }
@@ -46,6 +52,40 @@ body {
 
 .text-base {
   color: var(--primary);
+}
+
+.bg-error {
+  background: var(--error);
+}
+
+.text--error {
+  color: var(--error);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header {
@@ -68,6 +108,42 @@ header {
 
 .categorynav {
   height: 3rem;
+}
+
+.error-thumbnail {
+  width: 20rem;
+  height: 20rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.error-image {
+  max-width: 18rem;
+  max-height: 18rem;
+  object-fit: cover;
+}
+
+.btn-back {
+  background: var(--white);
+  border: solid .125rem var(--white);
+  border-radius: .25rem;
+  color: var(--error);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.375rem 1rem;
+  text-transform: uppercase;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.btn-back:hover {
+  background: var(--error);
+  color: var(--white);
 }
 
 /* MIN-WIDTH: 768px => 48rem */

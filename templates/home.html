@@ -20,7 +20,7 @@
 <body>
   <header class="sticky top-0 w-100 bg-black d-flex align-items-center">
     <div class="container">
-      <div class="d-flex align-items-center justify-content-between">
+      <div class="flex-between">
         <a href="/">
           <img src="{% static 'images/logo/logo.png' %}" alt="BRAND-LOGO" width="64">
         </a>
@@ -47,7 +47,7 @@
   <div class="d-none d-md-block">
     <nav class="categorynav d-flex align-items-center">
       <div class="container">
-        <ul class="d-flex align-items-center justify-content-center gap-3">
+        <ul class="flex-center gap-3">
           {% for cat in categories %}
             <li>
               <a href="#" class="ctglink">

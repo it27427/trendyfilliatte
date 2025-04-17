@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 
-<body class="bg-base">
-  <div class="w-100 vh-100 d-flex align-items-center justify-content-center">
-    <figure class="">
-      <img src="{% static 'images/error/404.png' %}" alt="ERROR 404 PAGE NOT FOUND" class="img-fluid">
-    </figure>
+<body class="bg-error">
+  <div class="w-100 vh-100 flex-center">
+    <div class="flex-center-column">
+      <figure class="error-thumbnail flex-center-column">
+        <img src="{% static 'images/error/404.png' %}" alt="ERROR 404 PAGE NOT FOUND" class="error-image">
+
+        <a href="/" class="btn-back">
+          <i class="bi bi-arrow-left"></i> Back To Home
+        </a>
+      </figure>
+    </div>
   </div>
 </body>
