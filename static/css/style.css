@@ -58,7 +58,7 @@ body {
   background: var(--error);
 }
 
-.text--error {
+.text-error {
   color: var(--error);
 }
 
@@ -98,7 +98,7 @@ header {
 
 .ctglink {
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
