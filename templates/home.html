@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <header class="sticky top-0 w-100 bg-black d-flex align-items-center">
+  <header class="position-sticky top-0 z-3 w-100 bg-black d-flex align-items-center">
     <div class="container">
       <div class="flex-between">
         <a href="/">
@@ -60,29 +60,64 @@
     </nav>
   </div>
 
-  {% for post in featured_post %}
-    {% if forloop.first %}
-      <main>
+  <main>
+    {% for post in featured_post %}
+      {% if forloop.first %}
         <div class="container">
           <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" style="background: url({{post.blog_image.url}}); background-blend-mode: overlay; background-size: cover;">
             <div class="col-lg-10 px-0">
               <h1 class="display-4 fst-italic">{{ post.title }}</h1>
               <p class="lead my-3">{{ post.short_description }}</p>
               <p class="lead mb-0">
-                <a href="#" class="text-body-emphasis fw-bold">
+                <a href="#" class="fw-bold btn-continue">
                   Continue reading...
                 </a>
               </p>
             </div>
           </div>
         </div>
-      </div>
-    {% endif %}
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
 
-  <h1 clss="text-center fw-bold text-primary mb-0">
-    Welcome to the Trendyfilliatte application!
-  </h1>
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-12 mb-3">
+          <h2 class="text-primary text-uppercase" style="letter-spacing: 0.125rem">Featured Posts</h2>
+        </div>
+
+        {% for post in featured_post %}
+          {% if not forloop.first %}
+            <div class="col-md-6">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative fearuredrow">
+                <div class="col d-none d-lg-block">
+                  <figure class="featured-thumbnail flex-center overflow-hidden">
+                    <img src="{{post.blog_image.url}}" alt="{{post.blog_image.url}}" class="object-contain">
+                  </figure>
+                </div>
+                
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary-emphasis">{{ post.category }}</strong>
+                  <h3 class="mb-0 text-truncate">
+                    {{ post.title }}
+                  </h3>
+                  <p class="my-1 text-muted">
+                    {{ post.created_at | timesince }} ago | {{ post.author }}
+                  </p>
+                  <p class="card-text my-2 line-clamp-4">
+                    {{ post.short_description }}
+                  </p>
+                  <a href="#" class="icon-link gap-1 icon-link-hover stretched-link" title="{{ post.title }}">
+                    Continue reading 
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>
