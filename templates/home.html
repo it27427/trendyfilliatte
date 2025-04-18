@@ -60,6 +60,26 @@
     </nav>
   </div>
 
+  {% for post in featured_post %}
+    {% if forloop.first %}
+      <main>
+        <div class="container">
+          <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" style="background: url({{post.blog_image.url}}); background-blend-mode: overlay; background-size: cover;">
+            <div class="col-lg-10 px-0">
+              <h1 class="display-4 fst-italic">{{ post.title }}</h1>
+              <p class="lead my-3">{{ post.short_description }}</p>
+              <p class="lead mb-0">
+                <a href="#" class="text-body-emphasis fw-bold">
+                  Continue reading...
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
   <h1 clss="text-center fw-bold text-primary mb-0">
     Welcome to the Trendyfilliatte application!
   </h1>
