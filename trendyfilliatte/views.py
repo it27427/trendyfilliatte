@@ -7,7 +7,10 @@ def home(request):
     featured_post = Blogs.objects.filter(is_featured=True)
     # Get the latest blogs from each category
     print(featured_post)
-    context = { 'categories': categories }
+    context = {
+        'categories': categories,
+        'featured_post': featured_post,
+    }
     return render(request, 'home.html', context)
 
 
