@@ -4,7 +4,7 @@ from blogs.models import Category, Blogs
 
 def home(request):
     categories = Category.objects.all()
-    featured_post = Blogs.objects.filter(is_featured=True)
+    featured_post = Blogs.objects.filter(is_featured=True, status='published')
     post = Blogs.objects.filter(is_featured=False, status='published')
     context = {
         'categories': categories,
